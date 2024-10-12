@@ -47,7 +47,7 @@ git clone https://github.com/your-username/arm-curl-counters.git
 cd arm-curl-counters
 ```
 
-### ขั้นตอนที่ 3: สร้าง Virtual Environment
+### สร้าง Virtual Environment (Optional)
 
 ```
 python -m venv venv
@@ -64,7 +64,7 @@ python -m venv venv
   source venv/bin/activate
   ```
 
-### ขั้นตอนที่ 4: ติดตั้ง Dependencies
+### ขั้นตอนที่ 3: ติดตั้ง Dependencies
 
 ติดตั้งไลบรารีที่จำเป็นทั้งหมดโดยใช้คำสั่ง:
 
