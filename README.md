@@ -14,7 +14,7 @@
 ## โครงสร้าง Directory
 
 ```
-arm-curl-counter/
+arm-curl-counters/
 │
 ├── app.py
 ├── requirements.txt
@@ -43,8 +43,8 @@ arm-curl-counter/
 ### ขั้นตอนที่ 2: โคลนโปรเจค
 
 ```
-git clone https://github.com/your-username/arm-curl-counter.git
-cd arm-curl-counter
+git clone https://github.com/your-username/arm-curl-counters.git
+cd arm-curl-counters
 ```
 
 ### ขั้นตอนที่ 3: สร้าง Virtual Environment
