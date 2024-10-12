@@ -1,4 +1,4 @@
-# AI-powered Arm Curl Counter
+# AI-powered Arm Curl Counters
 
 ระบบนับการยกน้ำหนักแขนอัจฉริยะด้วย Computer Vision
 
