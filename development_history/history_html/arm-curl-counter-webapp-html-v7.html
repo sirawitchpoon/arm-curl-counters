@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arm Curl Counter</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Arm Curl Counter</h1>
+        <div class="video-container">
+            <img src="{{ url_for('static', filename='images/left_cheer.gif') }}" alt="Left Cheer" class="cheer-gif left">
+            <img src="{{ url_for('video_feed') }}" width="640" height="480">
+            <img src="{{ url_for('static', filename='images/right_cheer.gif') }}" alt="Right Cheer" class="cheer-gif right">
+        </div>
+        <div class="controls">
+            <button onclick="resetCounter()">Reset</button>
+            <input type="number" id="targetInput" placeholder="Set target" min="0">
+            <button onclick="setTarget()">Start Target</button>
+        </div>
+        <div id="message"></div>
+        <div class="info">
+            <p>Target: The number of arm curls you want to achieve.</p>
+            <p>Calories: Each arm curl burns approximately 0.1 calories.</p>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

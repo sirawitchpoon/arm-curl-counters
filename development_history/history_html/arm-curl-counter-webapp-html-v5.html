@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arm Curl Counter</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        .container {
+            text-align: center;
+        }
+        h1 {
+            color: #333;
+        }
+        .controls {
+            margin-top: 20px;
+        }
+        button, input {
+            margin: 5px;
+            padding: 5px 10px;
+        }
+        #message {
+            color: red;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Arm Curl Counter</h1>
+        <img src="{{ url_for('video_feed') }}" width="640" height="480">
+        <div class="controls">
+            <button onclick="resetCounter()">Reset</button>
+            <input type="number" id="targetInput" placeholder="Set target" min="0">
+            <button onclick="setTarget()">Start Target</button>
+        </div>
+        <div id="message"></div>
+    </div>
+
+    <script>
+        function resetCounter() {
+            fetch('/reset', { method: 'POST' })
+                .then(response => response.json())
+                .then(data => {
+                    console.log(data);
+                    document.getElementById('message').innerText = '';
+                });
+        }
+
+        function setTarget() {
+            const target = document.getElementById('targetInput').value;
+            fetch('/set_target', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: `target=${target}`
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log(data);
+                if (data.status === 'error') {
+                    document.getElementById('message').innerText = data.message;
+                } else {
+                    document.getElementById('message').innerText = '';
+                }
+            });
+        }
+    </script>
+</body>
+</html>

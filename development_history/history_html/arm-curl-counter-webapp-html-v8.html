@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arm Curl Counter</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Arm Curl Counter</h1>
+        <div class="video-container">
+            <img src="{{ url_for('static', filename='images/left_cheer.gif') }}" alt="Left Cheer" class="cheer-gif left">
+            <img src="{{ url_for('video_feed') }}" width="640" height="480">
+            <img src="{{ url_for('static', filename='images/right_cheer.gif') }}" alt="Right Cheer" class="cheer-gif right">
+        </div>
+        <div class="controls">
+            <button onclick="resetCounter()">Reset</button>
+            <input type="number" id="targetInput" placeholder="Set target" min="0">
+            <button onclick="setTarget()">Start Target</button>
+        </div>
+        <div id="message"></div>
+        <div class="info">
+            <p>Target: The number of arm curls you want to achieve.</p>
+            <p>Calories: Each arm curl burns approximately 0.1 calories.</p>
+        </div>
+    </div>
+
+    <script>
+        function resetCounter() {
+            fetch('/reset', { method: 'POST' })
+                .then(response => response.json())
+                .then(data => {
+                    console.log(data);
+                    document.getElementById('message').innerText = '';
+                });
+        }
+
+        function setTarget() {
+            const target = document.getElementById('targetInput').value;
+            fetch('/set_target', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: `target=${target}`
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log(data);
+                if (data.status === 'error') {
+                    document.getElementById('message').innerText = data.message;
+                } else {
+                    document.getElementById('message').innerText = '';
+                }
+            });
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+}
+.container {
+    text-align: center;
+}
+h1 {
+    color: #333;
+}
+.video-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.cheer-gif {
+    width: 100px;
+    height: auto;
+}
+.left {
+    margin-right: 10px;
+}
+.right {
+    margin-left: 10px;
+}
+.controls {
+    margin-top: 20px;
+}
+button, input {
+    margin: 5px;
+    padding: 5px 10px;
+}
+#message {
+    color: red;
+    margin-top: 10px;
+}
+.info {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #666;
+}
