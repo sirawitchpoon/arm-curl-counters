@@ -1,4 +1,4 @@
-# Mini Project Arm Curl Counter: บันทึกการพัฒนา
+# Mini Project AI-powered Arm Curl Counter: บันทึกการพัฒนา
 
 บันทึกนี้แสดงถึงกระบวนการพัฒนาโครงการ AI-powered Arm Curl Counter ตั้งแต่เริ่มต้นจนถึงเวอร์ชันสุดท้าย
 
