@@ -102,6 +102,10 @@ For a detailed log of the development process and decisions made during this pro
 
 Semester1/2024 Khonkaen University Computer Engineering, Mini Project for Class: EN813709 Augmented Intelligence 
 
+## Demo Presentation
+
+https://youtu.be/uvPypWTl8aI
+
 ## ผู้พัฒนา
 
 Sirawitch Butryojantho - Thailand - Khonkaen University 58 - Computer Engineering 31
